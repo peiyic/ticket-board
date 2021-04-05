@@ -11,22 +11,22 @@ import { ApolloProvider,
          HttpLink, 
          split } from '@apollo/client';
 import { WebSocketLink } from "@apollo/client/link/ws";
-var base64 = require('base-64');
+import Data from './data.json';
 
 // Create an http link:
 const httpLink = new HttpLink({
   uri: 'https://w6tcrg3sb4.execute-api.us-east-1.amazonaws.com/example-example-graphql-api',
   headers: {
-    'Authorization': base64.encode('123')
+    'Authorization': Data.userID
   }
 });
 
 // Create a WebSocket link:
-const wsLink = new WebSocketLink(new SubscriptionClient(`wss://o8jmtfhs88.execute-api.ap-southeast-2.amazonaws.com/peiyi`, {
+const wsLink = new WebSocketLink(new SubscriptionClient(`wss://156hxo0ega.execute-api.us-east-1.amazonaws.com/example`, {
   reconnect: true,
   connectionParams: async () => {
     return {
-      Authorization: base64.encode('123')
+      Authorization: Data.userID
     }
   }
 }, undefined, []));
