@@ -18,18 +18,19 @@ function Alert(props: AlertProps) {
 
 function UpdateTicketAlert () {
     const [open, setOpen] = useState(true);
-    const { data, loading, error } = useSubscription(
-      UPDATE_TICKET_SUBSCRPTION,
-      { variables: { organisationId: Data.organizationID } }
-    );
+    const { data, loading, error } = useSubscription(UPDATE_TICKET_SUBSCRPTION, { 
+        variables: { 
+          organisationId: Data.organizationID 
+        }
+      });
     
 
     const handleClose = () => {
         setOpen(false);
     };
 
-    if (error) {return (<p>error</p>)};
-    if (loading) {return (<p>loading</p>)};
+    if (error) {return (<p>{error}</p>)};
+    if (loading) {return (<p>{loading}</p>)};
     
     return ( loading ? null :
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>

@@ -48,6 +48,7 @@ function Board({id}) {
           "boardId": id
         }
       });
+
     const [createTicket] = useMutation(CREATE_TICKET, {
         update(cache, { data: { putTicket } }) {
             cache.modify({
@@ -95,7 +96,7 @@ function Board({id}) {
             }
         });
         setOpen(false);
-        // event.preventDefault();
+        event.preventDefault();
     }
 
       if (loading) return (<div>loading</div>);

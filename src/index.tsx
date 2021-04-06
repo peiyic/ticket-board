@@ -22,7 +22,7 @@ const httpLink = new HttpLink({
 });
 
 // Create a WebSocket link:
-const wsLink = new WebSocketLink(new SubscriptionClient(`wss://156hxo0ega.execute-api.us-east-1.amazonaws.com/example`, {
+const wsLink = new WebSocketLink(new SubscriptionClient('wss://156hxo0ega.execute-api.us-east-1.amazonaws.com/example', {
   reconnect: true,
   connectionParams: async () => {
     return {

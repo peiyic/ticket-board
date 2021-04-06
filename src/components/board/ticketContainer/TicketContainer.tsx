@@ -1,5 +1,6 @@
 import Ticket from '../ticket/Ticket';
 
+// TicketContainer contains the tickets that fall into the same status
 function TicketContainer({status, tickets, boardID}) {
     return (
         <div>
