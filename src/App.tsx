@@ -86,6 +86,7 @@ function App() {
       }
     });
     setOpen(false);
+    setNewBoardName('');
     event.preventDefault();
   }
 
@@ -115,6 +116,7 @@ return (
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
     >
+      <form onSubmit={(e) => handleSubmit(e)}>
         <DialogContent>
             <Grid container direction="column">
                 <Grid item>
@@ -127,10 +129,11 @@ return (
             <button onClick={handleClose} color="primary">
                 Cancel
             </button>
-            <button onClick={(e) => handleSubmit(e)} color="primary">
+            <button type="submit" color="primary">
                 Create
             </button>
         </DialogActions>
+        </form>
     </Dialog>
   </div>
 );
