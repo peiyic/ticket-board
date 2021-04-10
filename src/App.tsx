@@ -109,7 +109,7 @@ return (
       <option key={board.id} value={index} selected={index === 0}>{board.name}
       </option>))}
     </select>
-    <Board id={data.organisation.boards[selectedBoardIndex].id}></Board>
+    {data.organisation.boards.length>0 && <Board id={data.organisation.boards[selectedBoardIndex].id}></Board>}
     <Dialog
         open={open}
         onClose={handleClose}
