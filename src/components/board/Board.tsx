@@ -83,6 +83,7 @@ function Board({id}) {
     };
 
     const handleSubmit = (event) => {
+      event.preventDefault();
         createTicket({
             variables: {
                 "organisationId": Data.organizationID,
@@ -96,7 +97,6 @@ function Board({id}) {
             }
         });
         setOpen(false);
-        event.preventDefault();
     }
 
       if (loading) return (<div>loading</div>);

@@ -64,6 +64,7 @@ function Ticket({item, boardID}) {
     };
 
     const handleUpdate =(event) => {
+        event.preventDefault();
         updateTicket({
             variables: {
                 "organisationId": Data.organizationID,
@@ -78,10 +79,10 @@ function Ticket({item, boardID}) {
             }
         });
         setOpen(false);
-        event.preventDefault();
     };
 
     const handleDelete = (event) => {
+        event.preventDefault();
         deleteTicket({
             variables: {
                 "organisationId": Data.organizationID,
@@ -89,7 +90,6 @@ function Ticket({item, boardID}) {
             }
         });
         setOpen(false);
-        event.preventDefault();
     }
 
     return (

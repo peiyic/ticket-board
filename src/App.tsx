@@ -77,6 +77,7 @@ function App() {
   });
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     createBoard({
       variables: {
         organisationId: Data.organizationID,
@@ -87,7 +88,6 @@ function App() {
     });
     setOpen(false);
     setNewBoardName('');
-    event.preventDefault();
   }
 
   const handleOpen = () => {
