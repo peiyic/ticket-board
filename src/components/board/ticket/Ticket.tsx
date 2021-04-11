@@ -46,7 +46,7 @@ function Ticket({item, boardID}) {
               fields: {
                 tickets(existingTickets, {readField}) {
                     existingTickets.filter(
-                        commentRef => deleteTicket.id !== readField('id', commentRef)
+                        ticketRef => deleteTicket.id !== readField('id', ticketRef)
                     )
                 }
               }
@@ -60,7 +60,6 @@ function Ticket({item, boardID}) {
 
     const handleClose = () => {
         setOpen(false);
-        console.log(`handleClose ${open}`)
     };
 
     const handleUpdate =(event) => {
