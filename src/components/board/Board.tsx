@@ -80,6 +80,8 @@ function Board({id}) {
 
     const handleClose = () => {
         setOpen(false);
+        setTicketDescription('');
+        setTicketName('');
     };
 
     const handleSubmit = (event) => {
@@ -96,7 +98,7 @@ function Board({id}) {
                 }
             }
         });
-        setOpen(false);
+        handleClose();
     }
 
       if (loading) return (<div>loading</div>);
@@ -118,6 +120,7 @@ function Board({id}) {
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
             >
+              <form onSubmit={(e) => handleSubmit(e)}>
                 <DialogContent>
                     <Grid container direction="column">
                         <Grid item>
@@ -134,10 +137,11 @@ function Board({id}) {
                     <Button onClick={handleClose} color="primary">
                         Cancel
                     </Button>
-                    <Button onClick={handleSubmit} color="primary">
+                    <Button type="submit" color="primary">
                         Create
                     </Button>
                 </DialogActions>
+              </form>
             </Dialog>
             <UpdateTicketAlert></UpdateTicketAlert>
         </div>
